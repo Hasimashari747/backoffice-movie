@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/donatur', function(){
+    return view('donatur');
+})->middleware('auth');
+
+Route::get('/profile', function(){
+    return view('profile');
+})->middleware('auth');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
